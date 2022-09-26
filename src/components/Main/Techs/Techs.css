@@ -76,6 +76,7 @@
         margin: 0 auto;
         max-width: 284px;
         padding: 70px 18px;
+        background-color: #202020;
     }
 
     .techs__subtitle {
@@ -89,7 +90,8 @@
 
     .techs__header {
         font-size: 18px;
-        line-height: 22px
+        line-height: 22px;
+        border-bottom: 1px #000000 solid;
     }
     .techs__title {
         font-size: 30px;

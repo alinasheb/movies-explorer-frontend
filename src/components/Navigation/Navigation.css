@@ -161,6 +161,21 @@
     }
     
   }
+
+  @media screen and (max-height: 700px){
+    .navigation {
+      min-height: 780px;
+    }
+
+    .navigation__profile {
+      margin: 0 auto;
+    }
+    .navigation__item:last-of-type {
+      padding-bottom: 200px;
+    }
+    
+  }
+  
   
 
 

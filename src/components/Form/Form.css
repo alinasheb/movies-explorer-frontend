@@ -4,6 +4,7 @@
     padding: 70px 0;
     max-width: 396px;
     margin: 0 auto;
+    height: 100vh;
 }
 
 .form__logo {
@@ -118,6 +119,26 @@
 @media screen and (max-width: 450px) {
     .form {
         margin: 0 30px;
+        padding: 56px 0;
+        height: auto;
+    }
+    .form__logo {
+        margin: 0 110px;
+    }
+    .form__title {
+        text-align: center;
+        margin: 40px 0 80px 0;
+    }
+    .form__field_last {
+        margin-bottom: 200px;
+    }
+    .form__question {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .form__link {
+        font-size: 12px;
+        line-height: 15px;
     }
      
   }

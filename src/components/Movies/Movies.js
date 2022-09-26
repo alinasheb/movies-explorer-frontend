@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer';
 
 function Movies({ loggedIn, menuIsOpened, openMenu, closeMenu }) {
     return(
-        <section className='movies'>
+        <main className='movies'>
             <Header 
             loggedIn={loggedIn}
             profileActive={true}
@@ -18,7 +18,7 @@ function Movies({ loggedIn, menuIsOpened, openMenu, closeMenu }) {
             <SearchForm />
             <MoviesCardList />
             <Footer />
-        </section>
+        </main>
 
     );
 }

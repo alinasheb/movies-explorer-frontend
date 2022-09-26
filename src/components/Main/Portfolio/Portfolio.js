@@ -1,5 +1,4 @@
 import './Portfolio.css';
-import linkPortfolio from '../../../images/linkPortfolio.svg';
 
 function Portfolio() {
     return(
@@ -8,15 +7,15 @@ function Portfolio() {
             <ul className='portfolio__list'>
                 <li className='portfolio__item'>
                     <a href='https://alinasheb.github.io/russian-travel/' className='portfolio__link' target='_blank' rel='noreferrer'>Статичный сайт</a>
-                    <img src={linkPortfolio} alt ='Стрелочка' className='portfolio__arrow' />
+                    <a href='https://alinasheb.github.io/russian-travel/' className='portfolio__arrow' target='_blank' rel='noreferrer'></a>
                 </li>
                 <li className='portfolio__item'>
                     <a href='https://alinasheb.github.io/russian-travel/' className='portfolio__link' target='_blank' rel='noreferrer'>Адаптивный сайт</a>
-                    <img src={linkPortfolio} alt ='Стрелочка' className='portfolio__arrow' />
+                    <a href='https://alinasheb.github.io/russian-travel/' className='portfolio__arrow' target='_blank' rel='noreferrer'></a>
                 </li>
                 <li className='portfolio__item'>
                     <a href='https://travel.story.nomoredomains.sbs/sing-in' className='portfolio__link' target='_blank' rel='noreferrer'>Одностраничное приложение</a>
-                    <img src={linkPortfolio} alt ='Стрелочка' className='portfolio__arrow' />
+                    <a href='https://alinasheb.github.io/russian-travel/' className='portfolio__arrow' target='_blank' rel='noreferrer'></a>
                 </li>   
             </ul>
         </section>

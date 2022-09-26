@@ -8,19 +8,20 @@ import Header from '../Header/Header';
 function SavedMovies({ loggedIn, menuIsOpened, openMenu, closeMenu }) {
     
     return(
-        <section className='saved-movies'>
-            <Header 
+        <>
+        <Header 
             loggedIn={loggedIn}
             profileActive={true}
             menuIsOpened={menuIsOpened}
             openMenu={openMenu}
             closeMenu={closeMenu}
             />
+        <main className='saved-movies'>
             <SearchForm />
             <MoviesCardList type='save' size={3}></MoviesCardList>
-            <Footer />
-        </section>
-            
+        </main>
+        <Footer />
+        </>
     );
 }
 
