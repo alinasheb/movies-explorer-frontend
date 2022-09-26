@@ -1,0 +1,91 @@
+.profile__title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0 auto 123px auto;
+    text-align: center;
+}
+
+
+.profile__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 410px;
+    margin: 0 auto;
+    padding: 236px 0 0 0;
+}
+
+.profile__field {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.profile__field_line {
+    border-bottom: 1px solid #424242;
+}
+
+.profile__label {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.profile__input {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    background-color: initial;
+    border: 0;
+}
+
+.profile__input::placeholder{
+    padding-left: 105px;
+}
+
+.profile__input_placeholder::placeholder{
+    padding-left: 50px;
+}
+
+.profile__caption {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    margin: 190px auto 70px auto; 
+}
+
+.profile__question {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.profile__question:hover {
+    opacity: 0.7;
+}
+
+.profile__log {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EE3465;
+    text-decoration: none;
+}
+
+.profile__log:hover {
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 450px) {
+    .profile__form {
+        margin: 0 30px;
+    }
+  }
