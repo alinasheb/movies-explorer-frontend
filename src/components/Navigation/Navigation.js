@@ -1,27 +1,28 @@
 import React from 'react';
 
 import './Navigation.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navigation({ menuIsOpened, closeMenu }) {
+    const classSetActive = ({isActive})  => isActive ? 'navigation__link_active' : 'navigation__link';
     return(
         <div className={`navigation__wrap ${!menuIsOpened && 'navigation__wrap_hidden'}`}>
             <nav className='navigation'>
                 <ul className='navigation__list'>
                     <li className='navigation__item'>
-                        <Link to='/' className='navigation__link' onClick={closeMenu}>Главная</Link>
+                        <NavLink to='/' className={classSetActive}  onClick={closeMenu}>Главная</NavLink>
                     </li>
                     <li className='navigation__item'>
-                        <Link to='/movies' className='navigation__link navigation__link_active' onClick={closeMenu}>Фильмы</Link>
+                        <NavLink to='/movies' className={classSetActive} onClick={closeMenu}>Фильмы</NavLink>
                     </li>
                     <li className='navigation__item'>
-                        <Link to='/saved-movies' className='navigation__link' onClick={closeMenu}>Сохраненные фильмы</Link>
+                        <NavLink to='/saved-movies' className={classSetActive} onClick={closeMenu}>Сохраненные фильмы</NavLink>
                     </li>
                 </ul>
-                <Link to='/profile' className='navigation__profile' onClick={closeMenu}>
+                <NavLink to='/profile' className='navigation__profile' onClick={closeMenu}>
                     <p className='navigation__title'>Аккаунт</p> 
                     <div className='navigation__logo'></div>
-                </Link>
+                </NavLink>
             </nav>
             <button className='navigation__button' type='button' onClick={closeMenu} />
         </div>

@@ -9,10 +9,14 @@ import Portfolio from './Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
 
 
-function Main() {
+function Main({loggedIn, menuIsOpened, openMenu, closeMenu}) {
     return(
         <>
-        <Header />
+        <Header 
+        loggedIn={loggedIn}
+        menuIsOpened={menuIsOpened}
+        openMenu={openMenu}
+        closeMenu={closeMenu}/>
         <main className='page'>
             <Promo />
             <NavTab />
