@@ -3,7 +3,7 @@ import { Validator } from '../../utils/Validator';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 
-function Login({ handleLogin, isLoginSending, isLoginStatus }) {
+function Login({ onLogin, isLoginSending, isLoginStatus }) {
     const validateInput = Validator();
     const { email, password } = validateInput.errors;
     const errorMessage = !validateInput.isValid ? 'form__error form__error_visible' : 'form__error';
@@ -12,7 +12,7 @@ function Login({ handleLogin, isLoginSending, isLoginStatus }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const { email, password } = validateInput.values;
-        handleLogin(email, password);
+        onLogin(email, password);
         validateInput.resetForm();
       };
 

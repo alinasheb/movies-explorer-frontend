@@ -85,7 +85,7 @@ function App() {
       mainApi.getMovies(jwt)
         .then((data) => {
           setSavedMovies(data.filter((i) => i.owner === currentUser._id));
-          console.log(data);
+          //console.log(data);
         })
         .catch((err) => {
           console.log(err);
@@ -101,7 +101,7 @@ function App() {
       apiAuth
         .checkToken(jwt)
         .then((res) => {
-          console.log(res);
+          //console.log(res);
           if (res) {
             setLoggedIn(true);
             navigate(location.pathname);

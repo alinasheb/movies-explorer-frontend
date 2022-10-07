@@ -3,7 +3,7 @@ import { Validator } from '../../utils/Validator';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 
-function Register({ handleRegister, isRegisterStatus, isRegisterSending }) {
+function Register({ onRegister, isRegisterStatus, isRegisterSending }) {
   const validateInput = Validator();
   const { name, email, password } = validateInput.errors;
   const errorMessage = !validateInput.isValid ? 'form__error form__error_visible' : 'form__error';
@@ -12,7 +12,7 @@ function Register({ handleRegister, isRegisterStatus, isRegisterSending }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, password } = validateInput.values;
-    handleRegister(name, email, password);
+    onRegister(name, email, password);
     validateInput.resetForm();
   };
     return(
