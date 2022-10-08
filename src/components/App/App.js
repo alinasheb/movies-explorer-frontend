@@ -61,42 +61,36 @@ function App() {
 
   useEffect(() => {
     if (loggedIn) {
-      
+      mainApi.getMovies()
+        .then((res) => {
+          //console.log(res);
+            setSavedMovies(res); 
+          })
+        .catch((err) => {
+          console.log(err);
+        });
       apiAuth.getUserInfo()
-        .then((user) => {
-          setCurrentUser(user);
+        .then((data) => {
+          setCurrentUser(data);
         })
         .catch((err) => {
           console.error(`Данные пользователя не получены: ${err}`);
         });
-       if (JSON.parse(localStorage.getItem('filteredMovies'))) {
-       setMovies(JSON.parse(localStorage.getItem('filteredMovies')));
-         setChecked(JSON.parse(localStorage.getItem('checkbox')));
-         setCheckedSaveMovies(
-           JSON.parse(localStorage.getItem('checkboxSaveMovies'))
-         );
-     }
+        
+        if (JSON.parse(localStorage.getItem('filteredMovies'))) {
+          setMovies(JSON.parse(localStorage.getItem('filteredMovies')));
+          setChecked(JSON.parse(localStorage.getItem('checkbox')));
+          setCheckedSaveMovies(
+            JSON.parse(localStorage.getItem('checkboxSaveMovies'))
+          );
+      }
     }
-  }, [loggedIn]);
+  }, [loggedIn]); 
 
-  useEffect(() => {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      mainApi.getMovies(jwt)
-        .then((data) => {
-          setSavedMovies(data.filter((i) => i.owner === currentUser._id));
-          //console.log(data);
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-      
-    }
-  }, [currentUser]);
+
 
   const tokenCheck = () => {
     const jwt = localStorage.getItem('jwt');
-
     if (jwt) {
       apiAuth
         .checkToken(jwt)
@@ -113,6 +107,7 @@ function App() {
         });
     }
   };
+
 
   const handleSaveMovie = (movie) => {
     mainApi
@@ -152,6 +147,7 @@ function App() {
     }
   };
 
+  
   const searchMovies = (movies, name) => {
     return movies.filter((item) =>
       item.nameRU.toLowerCase().includes(name.toLowerCase())
@@ -197,27 +193,33 @@ function App() {
       }
     };
 
-  const handleSearchSavedMovies = (name) => {
-    setIsLoading(true);
-    mainApi
-      .getMovies()
-      .then((movies) => {
-        setAllSavedMovies(movies);
-        localStorage.setItem('checkboxSaveMovies', checkedSaveMovies);
-        const userSavedMovies = movies.filter((movie) => {
-          return movie.owner === currentUser._id;
-        });
-        const searchArr = searchMovies(userSavedMovies, name);
+    
+    const handleSearchSavedMovies = (name) => {
+      setIsLoading(true);
+      mainApi
+        .getMovies()
+        .then((movies) => {
+          setAllSavedMovies(movies);
+         localStorage.setItem('checkboxSaveMovies', checkedSaveMovies);
+         const userSavedMovies = movies.filter((movie) => {
+            return movie.owner === currentUser._id;
+          });
+          const searchArr = searchMovies(userSavedMovies, name);
+          setSavedMovies(searchArr);
+          setIsNotFound(!searchArr.length && !isFailed);
+          
+          setTimeout(() => setIsLoading(false), 1000);
+        })
+        .catch((err) => 
+         console.log(err));
+        
+        const searchArr = searchMovies(allSavedMovies, name);
         setSavedMovies(searchArr);
-       setIsNotFound(!searchArr.length && !isFailed);
+        setIsNotFound(!searchArr.length || !isFailed);
         setTimeout(() => setIsLoading(false), 1000);
-      })
-      .catch((err) => console.log(err));
-      const searchArr = searchMovies(allSavedMovies, name);
-      setSavedMovies(searchArr);
-      setIsNotFound(!searchArr.length || !isFailed);
-      setTimeout(() => setIsLoading(false), 1000);
-  };
+    };
+
+    
 
   const handleRegister = (name, email, password) => {
     apiAuth

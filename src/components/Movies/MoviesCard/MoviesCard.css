@@ -9,7 +9,8 @@
 .movies-card__image {
     object-fit: cover;
     height: 201px;
-    width: 360px;
+    width: 280px;
+    
 }
 
 .movies-card__info {
@@ -71,7 +72,7 @@
     font-size: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .movies-card {
         max-width: 339px;
     }
@@ -86,7 +87,7 @@
     }
   }
 
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 480px) {
     .movies-card {
         max-width: 300px;
     }
@@ -94,6 +95,7 @@
     .movies-card__image {
         height: 168px;
         width: 300px;
+        
     }
   }
 

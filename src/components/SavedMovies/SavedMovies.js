@@ -4,8 +4,14 @@ import SearchForm from '../Movies/SearchForm/SearchForm';
 import Preloader from '../Movies/Preloader/Preloader';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+//import { useState, useEffect } from 'react';
+//import { useLocation } from 'react-router-dom';
 
-function SavedMovies({loggedIn, menuIsOpened, openMenu, closeMenu, 
+function SavedMovies({
+    loggedIn, 
+    menuIsOpened, 
+    openMenu, 
+    closeMenu, 
     movies,
     onSubmit,
     isLoading,
@@ -20,6 +26,10 @@ function SavedMovies({loggedIn, menuIsOpened, openMenu, closeMenu,
     onDelete,
     allSavedMovies
 }) {
+
+    
+
+    
     
     return(
         <>

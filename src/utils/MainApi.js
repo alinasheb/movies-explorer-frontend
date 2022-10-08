@@ -62,6 +62,7 @@ class MainApi {
   
   const mainApi = new MainApi({
     url: 'https://api.explorer.movies.nomoredomains.sbs',
+    //url: 'http://localhost:3000',
   });
   
   export default mainApi;

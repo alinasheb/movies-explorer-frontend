@@ -2,6 +2,15 @@ import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { SHORT_FILM, 
+        WIDTH_MOBILE, 
+        WIDTH_TAB, 
+        RESULT_MOBILE, 
+        RESULT_TAB, 
+        RESULT_DESKTOP, 
+        MORE_DESKTOP, 
+        MORE_TAB,
+        MORE_MOBILE} from '../../../utils/constant';
 
     function MoviesCardList({ 
         movies,
@@ -25,12 +34,10 @@ import { useLocation } from 'react-router-dom';
 
           const searchShortMovies = (movies) => {
             const searchShortMoviesArr = movies.slice(0);
-            return searchShortMoviesArr.filter((item) => item.duration <= 40);
+            return searchShortMoviesArr.filter((item) => item.duration <= SHORT_FILM);
           };
 
-          let saveMoviesFilterArr = !checkedSaveMovies
-            ? searchShortMovies(savedMovies)
-            : savedMovies;
+          let saveMoviesFilterArr = !checkedSaveMovies ? searchShortMovies(savedMovies) : savedMovies;
 
           let moviesFilterArr = !checked ? searchShortMovies(movies) : movies;
 
@@ -41,18 +48,15 @@ import { useLocation } from 'react-router-dom';
 
 
           if (location.pathname === '/movies') {
-            if (windowWidth <= 480) {
-              setMoviesShownDisplay(5);
-              setMoviesToShowMore(1);
-            } else if (windowWidth <= 893 && windowWidth > 480) {
-              setMoviesShownDisplay(8);
-              setMoviesToShowMore(2);
-            } else if (windowWidth <= 1280 && windowWidth > 990) {
-              setMoviesShownDisplay(12);
-              setMoviesToShowMore(3);
-            } else if (windowWidth > 1280) {
-              setMoviesShownDisplay(16);
-              setMoviesToShowMore(4);
+            if (windowWidth <= WIDTH_MOBILE) {
+              setMoviesShownDisplay(RESULT_MOBILE);
+              setMoviesToShowMore(MORE_MOBILE);
+            } else if (windowWidth <= WIDTH_TAB ) {
+              setMoviesShownDisplay(RESULT_TAB);
+              setMoviesToShowMore(MORE_TAB);
+            } else if (windowWidth > WIDTH_TAB ) {
+              setMoviesShownDisplay(RESULT_DESKTOP);
+              setMoviesToShowMore(MORE_DESKTOP);
             }
           }
           
