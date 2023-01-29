@@ -1,0 +1,110 @@
+.about-project {
+    margin: 110px 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-project__title {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    border-bottom: 1px #DADADA solid;
+    padding-bottom: 23px;
+    margin: 0;
+}
+
+.about-project__list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    margin: 70px 0 110px 0;
+}
+
+.about-project__item-title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.about-project__item-subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 26px 0 0 0;
+}
+
+.about-project__progress {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.about-project__progress-time {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    padding: 9px auto;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.about-project__progress-time-green {
+    background-color: #3DDC84;
+    color: #000000;
+}
+
+.about-project__progress-time-gray {
+    background-color: #303030;
+}
+
+.about-project__progress-tech {
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8B8B8B;
+    margin: 14px 0 0 0;
+}
+
+@media screen and (max-width: 768px){
+    .about-project {
+        margin: 90px 50px;
+    }
+
+    .about-project__list {
+        margin-bottom: 80px;
+    }
+  }
+
+  @media screen and (max-width: 440px){
+    .about-project {
+        margin: 70px auto;
+        max-width: 284px;
+    }
+
+    .about-project__list {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+    .about-project__title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .about-project__item-title {
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 56px;
+    }
+
+    .about-project__item-subtitle {
+        font-size: 11px;
+        line-height: 16px;
+        margin: 16px 0 0 0;
+    }
+    .about-project__progress {
+        grid-template-columns: 2fr 4fr;
+    }
+  }
