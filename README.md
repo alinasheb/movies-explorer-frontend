@@ -1,8 +1,40 @@
-ссылка на макет: https://drive.google.com/file/d/1QhFmF10Hvh_s5vuDPG-ypz6vSpYTzSy3/view?usp=sharing
+# Дипломный проект Movies-explorer (Фронтенд-часть)
 
-ссылка на фронтенд: https://explor.movies.nomoredomains.icu/
+## Проект в рамках обучения на курсе Яндекс.Практикум "Веб-разработчик"
 
-ccылка на на пул реквест: https://github.com/alinasheb/movies-explorer-frontend/pull/2
-https://github.com/alinasheb/movies-explorer-frontend/pull/2
+Сервис, включающий  фронтенд часть приложения [Movies](https://explor.movies.nomoredomains.icu/), в котором пользователи могут осуществлять поиск фильмов по ключевым словам, просматривать трейлеры и сохранять понравившиеся фильмы на страницу "Сохраненные фильмы", а так же удалять их. Есть возможность фильтрации фильмов по короткометражкам. Реализована регистрация, авторизация пользователей и редактирование пользователей. 
+IP: 51.250.4.143
 
-ссылка на бэкенд: https://api.explorer.movies.nomoredomains.sbs/
+API реализован с валидацией запросов, логированием запросов и ошибок, централизованной обработкой ошибок и доступен по [ссылке ]( https://api.explorer.movies.nomoredomains.sbs/).
+
+## Цель проекта:
+закрепить полученные на курсе "Веб-разработчик" знания. 
+
+## Технологии:
+* Верстка
+    - Flexbox
+    - Grid-layout
+    - Позиционирование блоков и элементов
+    - Адаптивная верстка под размеры экранов 1280px, 1024px, 768px, 320px
+* React
+    - хуки useState и useEffect
+    - использование Create React App
+    - поднятие стейта
+* React Router
+    - работа с Local Starage
+    - авторизация через JWT
+
+
+## Инструкция по установке:
+
+* клонирование репозитория: 
+`git clone https://github.com/alinasheb/movies-explorer-api.git`
+
+* установка зависимостей
+`npm install`
+
+* запуск develop-сборки фронтенда
+`npm run start`
+
+## Макет в Figma
+[ссылка на макет ]( https://drive.google.com/file/d/1QhFmF10Hvh_s5vuDPG-ypz6vSpYTzSy3/view?usp=sharing)
